@@ -4,10 +4,10 @@ Examples:
 
 ssl:<br>
   SendEmail e("mail.example.com", 465, "login", "password", 5000, true); <br>
-  e.send("test@example.com", "me@example.com", "subject", "message"); <br>
+  e.send("test@example.com", "me@example.com", "subject", "message", false); <br>
+  e.send("test@example.com", "me@example.com", "subject", "/msg.log", true); <br>
   <br>
-  
+
 plain no auth:<br>
   SendEmail e("mail.example.com", 25, "", "", 5000, false);<br>
-  e.send("test@example.com", "me@example.com", "subject", "message");<br>
-
+  e.send("test@example.com", "me@example.com", "subject", "message", false);<br>
