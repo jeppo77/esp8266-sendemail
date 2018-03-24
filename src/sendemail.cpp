@@ -168,7 +168,7 @@ bool SendEmail::send(const String& from, const String& to, const String& subject
         {
                 File f;
                 f = SPIFFS.open(msg, "r");
-                if (f && f.size() < 32000)
+                if (f && f.size() < 3200000)
                 {
                         while (f.available())
                                 client->print((char)f.read());
