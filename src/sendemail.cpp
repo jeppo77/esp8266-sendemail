@@ -45,7 +45,14 @@ bool SendEmail::send(const String& from, const String& to, const String& subject
                 return false;
         }
         buffer = F("EHLO ");
-        buffer += client->localIP();
+        IPAddress ipaddress = client->localIP();
+        buffer += ipaddress[0];
+        buffer += F(".");
+        buffer += ipaddress[1];
+        buffer += F(".");
+        buffer += ipaddress[2];
+        buffer += F(".");
+        buffer += ipaddress[3];
         client->println(buffer);
 #ifdef DEBUG_EMAIL_PORT
         Log +=(buffer);
